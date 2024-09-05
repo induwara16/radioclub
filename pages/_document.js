@@ -7,9 +7,8 @@ export default function Document() {
                 <meta name="keywords" content="radioclub, royal college" />
                 <meta name="robots" content="index, follow" />
                 <meta name="language" content="English" />
-                <meta charSet='utf-8' />
+                <meta charset='utf-8' />
 
-                <meta property="og:title" content="The Radio Club of Royal College" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={process.env.siteurl} />
                 <meta property="og:image" content={`${process.env.siteurl}/favicon.png`} />
