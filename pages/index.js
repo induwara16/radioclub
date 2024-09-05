@@ -1,5 +1,3 @@
-import { Main } from 'next/document';
-
 export default function Index({ posts, globalData }) {
   return (
     <main classname=''>
