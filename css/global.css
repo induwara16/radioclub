@@ -23,3 +23,13 @@
 .bg-overlay {
     @apply relative after:absolute after:top-0 after:left-0 after:w-full after:h-full
 }
+
+:not(.bg-overlay *)
+{
+    @apply z-[1];
+}
+
+.prose
+{
+    @apply prose-invert;
+}

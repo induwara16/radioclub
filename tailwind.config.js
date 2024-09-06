@@ -10,6 +10,11 @@ module.exports = {
       fontFamily: {
         'sans': ['var(--font-rubik)', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        gray: {
+          850: '#21262a'
+        }
+      }
     },
   },
   plugins: [

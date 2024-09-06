@@ -10,7 +10,7 @@ const rubik = Rubik({
 
 export default function Layout({ children }) {
   return (
-    <div className={`${rubik.variable} font-sans`}>
+    <div className={`flex flex-col ${rubik.variable} font-sans`}>
       <Navbar />
       <main className="flex flex-col">{children}</main>
       <Footer />
