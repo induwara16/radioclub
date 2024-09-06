@@ -42,7 +42,7 @@ export default function Index({ }) {
           <h1>The Radio Club</h1>
           <AboutBlock />
         </div>
-        <div className="flex flex-col prose basis-1/2 prose-p:mb-10">
+        <div className="flex flex-col prose basis-1/2 prose-p:mb-8">
           <div>
             <h1>Our Vision</h1>
             <p>{vision}</p>
