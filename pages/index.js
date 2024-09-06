@@ -7,7 +7,7 @@ import landing_bg from '../images/landing-bg.jpg';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
-export default function Index() {
+export default function Index({ }) {
   return (
     <>
       <Head>
@@ -36,7 +36,7 @@ export default function Index() {
       </section>
 
       <section id="about" className="bg-gray-850 flex max-md:flex-col prose-h1:text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text prose-h1:mb-5 gap-14 md:gap-16 lg:gap-24 px-12 py-16 sm:px-24 lg:px-32 md:py-20 prose-p:!mb-2">
-        <div className="flex flex-col prose basis-1/2">
+        <div className="flex flex-col prose basis-1/2 prose-p:text-lg">
           <h1>The Radio Club</h1>
           <p>Royal College Radio Club was inaugurated in the year of 1925 as the Radio Listeners’ Club by the College Prefects during the tenure of then principal of Royal College – Mr. H.L Reed, making it one of the school’s oldest clubs. Since then, the club has been responsible for pioneering various initiatives.</p>
           <p>Members of the club maintain and operate much of the audiovisual assets at the College, including the sound systems and the school’s PA systems. It also provides services to other clubs and societies on a frequent basis on matters which concern electronics, audio or video, and liaise with other schools on these matters as well.</p>
@@ -51,8 +51,7 @@ export default function Index() {
           </div>
           <div>
             <h1>Our Office Bearers</h1>
-            <ul>
-              <li className="mb-2">Teacher-in-Charge</li>
+            <ul className="prose-li:m-0">
             </ul>
           </div>
         </div>

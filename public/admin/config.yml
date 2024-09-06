@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+local_backend: true
+media_folder: public/images
+public_folder: images
+collections:
+  - name: "about"
+    label: "About Block"
+    files:
+    - label: "About"
+      name: "about"
+      file: "content/about.md"
+      fields:
+        - { label: "Description", name: "body", widget: "text"}
+        - { label: "Vision", name: "vision", widget: "text" }
+        - { label: "Mission", name: "mission", widget: "text"}
+        - label: 'Office Bearers'
+          name: "board"
+          widget: list
+          fields:
+            - { label: "Position", name: "postion", widget: "string"}
+            - { label: "Name", name: "name", widget: "string"}
