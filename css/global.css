@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
+.btn {
+    @apply p-3 px-5 font-medium border-sky-600 border-2 transition duration-500;
+}
+
+.btn.btn-fill {
+    @apply bg-sky-600 hover:bg-opacity-60;
+}
+
+.btn.btn-outline {
+    @apply hover:bg-sky-600;
+}
+
+.bg-overlay {
+    @apply relative after:absolute after:top-0 after:left-0 after:w-full after:h-full
+}

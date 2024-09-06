@@ -1,11 +1,17 @@
+import Head from "next/head";
 import Layout from "../components/Layout";
-
 import '../css/global.css';
+
 
 export default function Radio({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
