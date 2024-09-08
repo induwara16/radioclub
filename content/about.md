@@ -1,6 +1,4 @@
 ---
-vision: Awesome kitties
-mission: Test Test Test
 tic: Mr. Nishan Abeykoon
 board:
   - position: Chairman

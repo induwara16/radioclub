@@ -9,14 +9,13 @@ public_folder: images
 collections:
   - name: "about"
     label: "About Block"
+    description: About and Board Positions
     files:
     - label: "About"
       name: "about"
       file: "content/about.md"
       fields:
-        - { label: "Body", name: "body", widget: "markdown"}
-        - { label: "Vision", name: "vision", widget: "text" }
-        - { label: "Mission", name: "mission", widget: "text"}
+        - { label: "Description", name: "body", widget: "markdown"}
         - { label: "TIC", name: "tic", widget: "string" }
         - label: 'Office Bearers'
           name: "board"
