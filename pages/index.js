@@ -46,11 +46,11 @@ export default function Index({ }) {
         <div className="prose-p:!mb-8 prose-h1:!mb-4">
           <div>
             <h1>Our Vision</h1>
-            <p>Vision</p>
+            <p>To inspire young Royalists in many fields of radio and technology to make them capable of working with various technologies and create a platform where they can motivate themselves to research and think new, rather than recreating which is currently practiced in the country.</p>
           </div>
           <div>
             <h1>Our Mission</h1>
-            <p>Mission</p>
+            <p>To create an atmosphere where the students will be able to learn different fields of radio and technology. To integrate inovate and enhance the knowledge of the schooling community of Royal College, then use their imagination and innovative skills to conduct research at a student level.</p>
           </div>
           <div>
             <h1>Office Bearers</h1>
