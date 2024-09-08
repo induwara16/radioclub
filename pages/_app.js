@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
+
+import 'animate.css';
 import '../css/global.css';
 
 

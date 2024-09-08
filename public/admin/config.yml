@@ -15,11 +15,24 @@ collections:
       name: "about"
       file: "content/about.md"
       fields:
-        - { label: "Description", name: "body", widget: "markdown"}
-        - { label: "TIC", name: "tic", widget: "string" }
-        - label: 'Office Bearers'
-          name: "board"
-          widget: list
-          fields:
-            - { label: "Position", name: "position", widget: "string"}
-            - { label: "Name", name: "name", widget: "string"}
+      - { label: "Description", name: "body", widget: "markdown"}
+      - { label: "Vision", name: "vision", widget: "text"}
+      - { label: "Mission", name: "mission", widget: "text"}
+      - { label: "TIC", name: "tic", widget: "string" }
+      - label: 'Office Bearers'
+        name: "board"
+        widget: list
+        fields:
+          - { label: "Position", name: "position", widget: "string"}
+          - { label: "Name", name: "name", widget: "string"}
+  - name: 'settings'
+    label: 'Site Settings'
+    descriptions: Change values associated with the site
+    files:
+    - label: 'Sign Up Form'
+      name: 'signup'
+      file: content/settings/signup.json
+      fields:
+      - { label: 'Google Service Account Email', name: 'email', widget: 'string'}
+      - { label: 'Private Key', name: 'key', widget: 'text'}
+      - { label: 'Spreadsheet ID', name: 'id', widget: 'string'}

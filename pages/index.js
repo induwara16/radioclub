@@ -13,7 +13,7 @@ const sora = Sora({ subsets: ['latin'], weight: '700' });
 
 
 export default function Index({ }) {
-  const { tic, board } = about;
+  const { vision, mission, tic, board } = about;
 
   return (
     <>
@@ -38,19 +38,19 @@ export default function Index({ }) {
         </div>
       </Cover>
 
-      <section id="about" className="bg-gray-850 prose-h1:!text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text cols-2">
-        <div className="prose-p:text-lg">
+      <section id="about" className="bg-gray-850 prose-h1:!text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text cols-2 !gap-y-6">
+        <div className="prose-p:md:text-lg prose-p:!mb-8">
           <h1 className="!mb-5">The Radio Club</h1>
           <AboutBlock />
         </div>
         <div className="prose-p:!mb-8 prose-h1:!mb-4">
           <div>
             <h1>Our Vision</h1>
-            <p>To inspire young Royalists in many fields of radio and technology to make them capable of working with various technologies and create a platform where they can motivate themselves to research and think new, rather than recreating which is currently practiced in the country.</p>
+            <p>{vision}</p>
           </div>
           <div>
             <h1>Our Mission</h1>
-            <p>To create an atmosphere where the students will be able to learn different fields of radio and technology. To integrate inovate and enhance the knowledge of the schooling community of Royal College, then use their imagination and innovative skills to conduct research at a student level.</p>
+            <p>{mission}</p>
           </div>
           <div>
             <h1>Office Bearers</h1>
@@ -78,7 +78,7 @@ export default function Index({ }) {
             <p>If you have any inquiries regarding the club please feel free to contact us</p>
             <a className="btn btn-fill mr-auto mt-5" href='#contact'>CONTACT US</a>
           </div>
-          <div className="flex flex-col my-auto">
+          <div className="flex flex-col">
             <SignupForm />
           </div>
         </div>

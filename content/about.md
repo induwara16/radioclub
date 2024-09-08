@@ -1,4 +1,12 @@
 ---
+vision: To inspire young Royalists in many fields of radio and technology to
+  make them capable of working with various technologies and create a platform
+  where they can motivate themselves to research and think new, rather than
+  recreating which is currently practiced in the country.
+mission: To create an atmosphere where the students will be able to learn
+  different fields of radio and technology. To integrate inovate and enhance the
+  knowledge of the schooling community of Royal College, then use their
+  imagination and innovative skills to conduct research at a student level.
 tic: Mr. Nishan Abeykoon
 board:
   - position: Chairman
@@ -26,9 +34,6 @@ board:
   - position: Student Coordinator
     name: Kushmika Mathew
 ---
+The Radio Club of Royal College, established in the year 1925 is one of the oldest clubs at Royal College. Formed with the main objective of inspiring young royalists in many fields of radio and technology, it was founded as the Radio Listeners Club by the College Prefects during the tenure of Principal Major H.L. Reed and since has one of the most essential clubs in the school by maintaining and operating much of the audiovisual assets at the College, including the sound systems and the school's PA systems. The club provides services to other clubs and societies on a frequent basis as the technological partners for their occasions on matters which concern electronics, audio, or video, and liaise with other schools on these matters as well.
 
-Royal College Radio Club was inaugurated in the year of 1925 as the Radio Listeners’ Club by the College Prefects during the tenure of then principal of Royal College – Mr. H.L Reed, making it one of the school’s oldest clubs. Since then, the club has been responsible for pioneering various initiatives.
-
-Members of the club maintain and operate much of the audiovisual assets at the College, including the sound systems and the school’s PA systems. It also provides services to other clubs and societies on a frequent basis on matters which concern electronics, audio or video, and liaise with other schools on these matters as well.
-
-The Radio Club also organizes various events throughout each year aimed to both serve the College as well as to improve the skills and capabilities of its members. These projects include FM Royal, which is the first ever school-managed FM radio station to operate in South Asia.
+Today the club is responsible for many pioneering initiatives and since its upcom- ing the Radio club has successfully completed several massive projects such as Crown cast, Paramount and one of the college's most famous and memorable annual projects Fm Royal. And we as the Radio Club of Royal College hope to make the students capable of working with various technologies and create a platform where they can motivate themselves to research and think New, rather than recreating what is currently practiced in the country.
