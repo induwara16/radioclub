@@ -8,7 +8,7 @@ board:
   - position: Treasurer
     name: Panchala Jayasekara
   - position: Asst. Chairman
-    name: Nethaka
+    name: Nethaka Dulnitha
   - position: Asst. Secretary
     name: Kevan Samarajeeva
   - position: Asst. Treasurer
