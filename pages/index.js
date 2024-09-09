@@ -1,13 +1,21 @@
 import Head from "next/head";
 import { Sora } from 'next/font/google';
 
+import {
+  TiSocialFacebookCircular,
+  TiSocialInstagramCircular,
+  TiSocialYoutubeCircular
+} from 'react-icons/ti';
+
 import landing_bg from '../images/landing-bg.jpg';
 import signup_bg from '../images/signup-bg.png';
 
 import Cover from "../components/Cover";
 import SignupForm from "../components/SignupForm";
 
-import { attributes as about, react as AboutBlock } from '../content/about.md'
+import { attributes as about, react as AboutBlock } from '../content/about.md';
+import { attributes as social } from '../content/social.md';
+
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
@@ -26,7 +34,7 @@ export default function Index({ }) {
         src={landing_bg}
         overlayclass="min-h-screen bg-black after:bg-gray-800 after:bg-opacity-70"
         imgclass="opacity-80 !fixed"
-        containerclass="text-center text-white my-auto px-8 sm:px-16 py-12 sm:py-20">
+        containerclass="text-center text-white my-auto px-5 xs:px-8 sm:px-16 py-12 sm:py-20">
 
         <h2 className="text-2xl font-medium opacity-70 mb-8 sm:mb-12">THE RADIO CLUB OF ROYAL COLLEGE</h2>
         <h2 className={`${sora.className} text-2xl sm:text-3xl mb-3 sm:mb-4`}>EXPERIENCE THE IMMERSIVE</h2>
@@ -71,18 +79,31 @@ export default function Index({ }) {
         overlayclass="bg-gray-950 bg-opacity-85 after:bg-gray-850 after:bg-opacity-60">
 
         <div className="prose-p:!mt-1 cols-2">
-          <div className="flex flex-col">
+          <div>
             <h1>Join RCRC Now!</h1>
             <p className="text-xl">Fill the following form to join The Radio Club of Royal College</p>
             <p>We welcome all Royalists from grade 6 and above. Join RCRC to gain vital experience and skills on Event Management, Audio Engineering and Compering!</p>
             <p>If you have any inquiries regarding the club please feel free to contact us</p>
             <a className="btn btn-fill mr-auto mt-5" href='#contact'>CONTACT US</a>
           </div>
-          <div className="flex flex-col">
+          <div>
             <SignupForm />
           </div>
         </div>
       </Cover>
+
+      <div className="cols-2 prose-p:text-lg prose-p:!my-0 justify-center bg-black">
+        <div className="text-center !basis-full !max-w-none">
+          <h1>Follow Us On Social Media</h1>
+          <p>Follow our social media pages to recieve the latest updates and news regarding projects and other important club events!</p>
+
+          <div className="flex text-6xl justify-center mt-8 prose-a:transition hover:prose-a:scale-110 prose-a:duration-500">
+            <a target="_blank" href={social.fb}><TiSocialFacebookCircular className="text-blue-500" /></a>
+            <a target="_blank" href={social.yt}><TiSocialYoutubeCircular className="text-red-600 mr-1" /></a>
+            <a target="_blank" href={social.insta}><TiSocialInstagramCircular className="text-fuchsia-500" /></a>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

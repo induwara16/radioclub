@@ -27,7 +27,7 @@ export default function SignupForm() {
       onSubmit={async function (values, { resetForm, setStatus }) {
         const resp = await fetch('/api/signup', {
           method: 'POST',
-          body: JSON.stringify({ ...values, class: values.class.toUpperCase() })
+          body: JSON.stringify(values)
         });
 
         let error = false;
@@ -56,13 +56,13 @@ export default function SignupForm() {
               <Field name='class' type="text" />
               <ErrorMessage name='class' component={ErrorContainer} />
             </div>
-            <div>
+            <div className='mb-8'>
               <label>WhatsApp Number:</label>
               <Field name='whatsapp' type="text" />
               <ErrorMessage name='whatsapp' component={ErrorContainer} />
             </div>
 
-            <div className='flex flex-row gap-x-6 mt-3 sm:mt-4'>
+            <div className='flex flex-row gap-x-6'>
               <button type="submit" className="btn btn-fill" disabled={isSubmitting}>JOIN RCRC</button>
               {isSubmitting &&
                 <div className='size-6 my-auto rounded-full bg-gray-500 animate-spin bg-opacity-70'>

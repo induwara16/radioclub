@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
-import settings from '../../content/settings/signup.json';
+import { attributes as settings } from '../../content/signup.md';
 import { schema } from '../../components/SignupForm';
 
 /**

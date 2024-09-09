@@ -6,6 +6,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         'sans': ['var(--font-rubik)', ...defaultTheme.fontFamily.sans],

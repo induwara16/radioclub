@@ -8,8 +8,8 @@ media_folder: public/images
 public_folder: images
 collections:
   - name: "about"
-    label: "About Block"
-    description: About and Board Positions
+    label: "Home Page"
+    description: About, Board Positions and Settings
     files:
     - label: "About"
       name: "about"
@@ -25,14 +25,17 @@ collections:
         fields:
           - { label: "Position", name: "position", widget: "string"}
           - { label: "Name", name: "name", widget: "string"}
-  - name: 'settings'
-    label: 'Site Settings'
-    descriptions: Change values associated with the site
-    files:
     - label: 'Sign Up Form'
       name: 'signup'
-      file: content/settings/signup.json
+      file: content/signup.md
       fields:
       - { label: 'Google Service Account Email', name: 'email', widget: 'string'}
       - { label: 'Private Key', name: 'key', widget: 'text'}
       - { label: 'Spreadsheet ID', name: 'id', widget: 'string'}
+    - label: 'Social Links'
+      name: 'social'
+      file: content/social.md
+      fields:
+      - { label: 'Facebook', name: 'fb', widget: 'string'}
+      - { label: 'YouTube', name: 'yt', widget: 'string'}
+      - { label: 'Instagram', name: 'insta', widget: 'string'}
