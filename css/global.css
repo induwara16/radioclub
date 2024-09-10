@@ -33,6 +33,14 @@
     @apply prose prose-invert flex flex-col basis-1/2;
 }
 
+.cols-1 {
+    @apply flex flex-col px-8 xs:px-12 py-14 md:px-20 lg:px-32 md:py-16 gap-14;
+}
+
+.cols-1 > div {
+    @apply prose prose-invert !max-w-none text-center;
+}
+
 :not(.bgo *) {
    @apply z-[1]; 
 }

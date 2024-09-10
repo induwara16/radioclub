@@ -41,8 +41,8 @@ export default function Index({ }) {
         <h1 className={`${sora.className} text-4xl sm:text-6xl break-words mb-10 sm:mb-16`}>TECHNOLOGY</h1>
 
         <div className="flex max-sm:flex-col max-sm:max-w-40 mx-auto justify-center gap-4 sm:gap-6">
-          <a href="/#about" className="btn btn-outline">ABOUT US</a>
-          <a href="/#signup" className="btn btn-fill">SIGN UP</a>
+          <a href="#about" className="btn btn-outline">ABOUT US</a>
+          <a href="#signup" className="btn btn-fill">SIGN UP</a>
         </div>
       </Cover>
 
@@ -92,16 +92,23 @@ export default function Index({ }) {
         </div>
       </Cover>
 
-      <div className="cols-2 prose-p:text-lg prose-p:!my-0 justify-center bg-black">
-        <div className="text-center !basis-full !max-w-none">
+      <div className="cols-1 prose-p:text-lg prose-p:!my-0 bg-gray-850">
+        <div className="pt-1">
           <h1>Follow Us On Social Media</h1>
           <p>Follow our social media pages to recieve the latest updates and news regarding projects and other important club events!</p>
 
-          <div className="flex text-6xl justify-center mt-8 prose-a:transition hover:prose-a:scale-110 prose-a:duration-500">
+          <div className="flex text-6xl justify-center mt-9 prose-a:transition hover:prose-a:scale-110 prose-a:duration-500 animate__animated animate__headShake animate__infinite animate__slower">
             <a target="_blank" href={social.fb}><TiSocialFacebookCircular className="text-blue-500" /></a>
             <a target="_blank" href={social.yt}><TiSocialYoutubeCircular className="text-red-600 mr-1" /></a>
             <a target="_blank" href={social.insta}><TiSocialInstagramCircular className="text-fuchsia-500" /></a>
           </div>
+        </div>
+      </div>
+
+      <div className="cols-1 bg-neutral-900 opacity-90 prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+        <div>
+          <h1>Get In Touch</h1>
+
         </div>
       </div>
     </>
