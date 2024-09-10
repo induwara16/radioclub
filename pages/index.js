@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from 'next/link';
 import { Sora } from 'next/font/google';
 
 import {
@@ -43,6 +44,23 @@ export default function Index({ }) {
         <div className="flex max-sm:flex-col max-sm:max-w-40 mx-auto justify-center gap-4 sm:gap-6">
           <a href="#about" className="btn btn-outline">ABOUT US</a>
           <a href="#signup" className="btn btn-fill">SIGN UP</a>
+        </div>
+      </Cover>
+
+      <Cover
+        src={signup_bg}
+        imgclass='opacity-20'
+        overlayclass="bg-gray-950 bg-opacity-85 after:bg-gray-850 after:bg-opacity-60">
+
+        <div className="cols-1">
+          <div>
+            <h1>Our Projects</h1>
+          </div>
+
+          <div className="flex max-sm:flex-col max-sm:max-w-40 mx-auto justify-center gap-4 sm:gap-6">
+            <Link href='/projects' className="btn btn-fill">ALL PROJECTS</Link>
+            <Link href='/gallary' className="btn btn-outline">GALLARY</Link>
+          </div>
         </div>
       </Cover>
 
@@ -92,7 +110,7 @@ export default function Index({ }) {
         </div>
       </Cover>
 
-      <div className="cols-1 prose-p:text-lg prose-p:!my-0 bg-gray-850">
+      <section className="cols-1 prose-p:text-lg prose-p:!my-0 bg-gray-850">
         <div className="pt-1">
           <h1>Follow Us On Social Media</h1>
           <p>Follow our social media pages to recieve the latest updates and news regarding projects and other important club events!</p>
@@ -103,14 +121,14 @@ export default function Index({ }) {
             <a target="_blank" href={social.insta}><TiSocialInstagramCircular className="text-fuchsia-500" /></a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="cols-1 bg-[#2a3035] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+      <section className="cols-1 bg-[#2a3035] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
         <div>
           <h1>Get In Touch</h1>
 
         </div>
-      </div>
+      </section>
     </>
   );
 }
