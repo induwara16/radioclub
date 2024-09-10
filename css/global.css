@@ -45,14 +45,6 @@
    @apply z-[1]; 
 }
 
-.bgo {
-    @apply relative after:absolute after:top-0 after:left-0 after:w-full after:h-full;
-}
-
-.bgo > div {
-    @apply z-10;
-}
-
 form > div {
     @apply flex flex-col mb-6;
 }
