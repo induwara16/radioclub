@@ -105,7 +105,7 @@ export default function Index({ }) {
         </div>
       </div>
 
-      <div className="cols-1 bg-neutral-900 bg-opacity-90 prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+      <div className="cols-1 bg-[#2a3035] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
         <div>
           <h1>Get In Touch</h1>
 
