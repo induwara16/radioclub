@@ -41,7 +41,7 @@ export default function Gallery({ pics }) {
       <RowsPhotoAlbum
         photos={photos}
         targetRowHeight={250}
-        componentsProps={{ container: { className: 'not-prose mt-12 mb-14' } }}
+        componentsProps={{ container: { className: 'not-prose mt-12 mb-10 md:mb-14' } }}
         render={{
           image: function (props, { index, height }) {
             return (

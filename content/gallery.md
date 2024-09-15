@@ -16,10 +16,6 @@ piclist:
     title: Decibel '24
     date: 2024-07-04T00:00:00.000Z
     featured: false
-  - featured: false
-    src: 287509643_4512115982224012_4953306786100007638_n.jpg
-    title: FM Royal '23
-    date: 2023-08-02T00:00:00.000Z
   - featured: true
     src: 357006887_599916428930985_2534570631427988535_n.jpg
     title: Decibel '23

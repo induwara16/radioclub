@@ -13,6 +13,27 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <script>
+        const ProjectPreview = createClass({
+            render: function () {
+                var entry = this.props.entry;
+                var image = entry.getIn(['data', 'featured']);
+                const featured = image ? this.props.getAsset(image) : '';
+                const getAsset = this.props.getAsset;
+                return h('div', {},
+                    this.props.widgetFor('title'),
+                    h('img', { src: featured.toString() }),
+                    this.props.widgetFor('body'),
+                    this.props.widgetsFor('gallery').map(function (image, index) {
+                        return h('div', { key: index },
+                            h('hr', {}),
+                            h('img', { src: image ? getAsset(image.get('data')).toString() : '' }),
+                        );
+                    })
+                );
+            }
+        });
+
+        CMS.registerPreviewTemplate("projects", ProjectPreview);
         CMS.registerPreviewStyle('img{max-width: 200px !important;}', { raw: true });
     </script>
 </body>

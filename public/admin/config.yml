@@ -7,7 +7,41 @@ backend:
 media_folder: content/gallery
 public_folder: /gallery
 
+logo_url: https://radioclub.netlify.app/favicon.png
+site_url: https://radioclub.netlify.app
+display_url: /
+
 collections:
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: Create and edit project descriptions
+    folder: content/projects
+    create: true
+    fields:
+      - label: Name
+        name: title
+        widget: string
+      - label: Featured Image,
+        name: featured
+        widget: image
+        media_folder: /content/gallery
+        public_folder: ''
+      - label: Description
+        name: body
+        widget: markdown
+      - label: Gallery
+        name: gallery
+        widget: list
+        field:
+          label: Image
+          name: image
+          widget: relation
+          collection: gallery
+          file: pics
+          display_fields: ['piclist.*.title', 'piclist.*.src']
+          search_fields: ['piclist.*.title']
+          value_field: 'piclist.*.src'
   - name: gallery
     label: Gallery
     description: Upload pictures to the Gallery
