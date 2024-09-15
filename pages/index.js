@@ -5,7 +5,7 @@ import { Sora } from 'next/font/google';
 import {
   TiSocialFacebookCircular,
   TiSocialInstagramCircular,
-  TiSocialYoutubeCircular
+  TiSocialYoutubeCircular,
 } from 'react-icons/ti';
 
 import landing_bg from '../images/landing-bg.jpg';
@@ -13,13 +13,13 @@ import signup_bg from '../images/signup-bg.png';
 
 import Cover from "../components/Cover";
 import SignupForm from "../components/SignupForm";
+import Gallery from "../components/Gallery";
 
 import { attributes as about, react as AboutBlock } from '../content/about.md';
 import { attributes as social } from '../content/social.md';
-
+import { attributes as gallery } from '../content/gallery/gallery.md';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
-
 
 export default function Index({ }) {
   const { vision, mission, tic, board } = about;
@@ -47,6 +47,13 @@ export default function Index({ }) {
         </div>
       </Cover>
 
+      <section id='projects' className="cols-1 bg-neutral-900 prose-h4:!mb-1 prose-h4:!text-gray-300/80">
+        <div>
+          <h1>Our Projects</h1>
+
+        </div>
+      </section>
+
       <Cover
         src={signup_bg}
         imgclass='opacity-20'
@@ -54,17 +61,14 @@ export default function Index({ }) {
 
         <div className="cols-1">
           <div>
-            <h1>Our Projects</h1>
-          </div>
-
-          <div className="flex max-sm:flex-col max-sm:max-w-40 mx-auto justify-center gap-4 sm:gap-6">
-            <Link href='/projects' className="btn btn-fill">ALL PROJECTS</Link>
-            <Link href='/gallary' className="btn btn-outline">GALLARY</Link>
+            <h1>Gallery</h1>
+            <Gallery pics={gallery.piclist.filter(function (pic) { return pic.featured; })} />
+            <Link href='/gallery' className="btn btn-fill mx-auto">VIEW ALL PHOTOS</Link>
           </div>
         </div>
       </Cover>
 
-      <section id="about" className="bg-gray-850 prose-h1:!text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text cols-2 !gap-y-6">
+      <section id="about" className="bg-neutral-900 prose-h1:!text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text cols-2 !gap-y-6">
         <div className="prose-p:md:text-lg prose-p:!mb-8">
           <h1 className="!mb-5">The Radio Club</h1>
           <AboutBlock />
@@ -110,7 +114,7 @@ export default function Index({ }) {
         </div>
       </Cover>
 
-      <section className="cols-1 prose-p:text-lg prose-p:!my-0 bg-gray-850">
+      <section className="cols-1 prose-p:text-lg prose-p:!my-0 bg-neutral-900">
         <div className="pt-1">
           <h1>Follow Us On Social Media</h1>
           <p>Follow our social media pages to recieve the latest updates and news regarding projects and other important club events!</p>
@@ -123,7 +127,7 @@ export default function Index({ }) {
         </div>
       </section>
 
-      <section className="cols-1 bg-[#2a3035] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+      <section className="cols-1 bg-[#1d1d1d] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
         <div>
           <h1>Get In Touch</h1>
 

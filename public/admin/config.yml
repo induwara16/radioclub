@@ -4,10 +4,31 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: public/images
-public_folder: images
+media_folder: content/gallery
+public_folder: /gallery
+
 collections:
-  - name: "about"
+  - name: gallery
+    label: Gallery
+    description: Upload pictures to the Gallery
+    files:
+      - label: Pictures
+        name: pics
+        file: content/gallery/gallery.md
+        fields:
+        - label: 'Images'
+          name: 'piclist'
+          widget: list
+          fields:
+            - label: Image Source
+              name: src
+              widget: image
+              media_folder: ''
+              public_folder: ''
+            - {label: Featured, name: featured, widget: boolean, default: false}
+            - {label: Title, name: title, widget: string}
+            - {label: Date, name: date, widget: datetime}
+  - name: "home"
     label: "Home Page"
     description: About, Board Positions and Settings
     files:
