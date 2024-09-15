@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import 'animate.css';
 import '../css/global.css';
 
-
 export default function Radio({ Component, pageProps }) {
   return (
     <>
