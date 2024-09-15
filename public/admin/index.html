@@ -13,22 +13,7 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <script>
-        var GalleryPreview = createClass({
-
-            render: function () {
-                var getAsset = this.props.getAsset;
-
-                return h('div', {},
-                    this.props.widgetsFor('pics').map(function (pic, index) {
-                        return h('div', { key: index },
-                            h('hr', {}),
-                            h('img', { width: 200, src: getAsset(pic.getIn(['data', 'pic', 'src'])) },),
-                        );
-                    })
-                );
-            }
-        });
-        CMS.registerPreviewTemplate("featured_gallery", GalleryPreview);
+        CMS.registerPreviewStyle('img{max-width: 200px !important;}', { raw: true });
     </script>
 </body>
 

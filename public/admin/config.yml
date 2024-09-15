@@ -14,7 +14,7 @@ collections:
     files:
       - label: Pictures
         name: pics
-        file: content/gallery/gallery.md
+        file: content/gallery.md
         fields:
         - label: 'Images'
           name: 'piclist'
@@ -23,7 +23,7 @@ collections:
             - label: Image Source
               name: src
               widget: image
-              media_folder: ''
+              media_folder: 'gallery'
               public_folder: ''
             - {label: Featured, name: featured, widget: boolean, default: false}
             - {label: Title, name: title, widget: string}

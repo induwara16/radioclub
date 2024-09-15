@@ -17,7 +17,7 @@ import Gallery from "../components/Gallery";
 
 import { attributes as about, react as AboutBlock } from '../content/about.md';
 import { attributes as social } from '../content/social.md';
-import { attributes as gallery } from '../content/gallery/gallery.md';
+import { attributes as gallery } from '../content/gallery.md';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
