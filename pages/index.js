@@ -62,7 +62,7 @@ export default function Index({ }) {
         <div className="cols-1">
           <div>
             <h1>Gallery</h1>
-            <Gallery pics={gallery.piclist.filter(function (pic) { return pic.featured; })} />
+            <Gallery pics={gallery.piclist.filter(function (pic) { return pic.featured; })} hide />
             <Link href='/gallery' className="btn btn-fill mx-auto">VIEW ALL PHOTOS</Link>
           </div>
         </div>

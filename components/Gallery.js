@@ -13,15 +13,17 @@ import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import 'yet-another-react-lightbox/plugins/captions.css'
 
-export default function Gallery({ pics }) {
+export default function Gallery({ pics, hide = false }) {
   const [index, setIndex] = useState(-1);
 
   const photos = pics.map(function (pic, i) {
     const img = require(`../content/gallery/${pic.src}`);
+
     return {
       src: img,
       alt: pic.title,
       title: pic.title,
+      description: pic.date ? new Date(pic.date).toDateString() : undefined,
       width: img.default.width,
       height: img.default.height,
       key: `${pic.title}-${i}`
@@ -45,7 +47,7 @@ export default function Gallery({ pics }) {
         render={{
           image: function (props, { index, height }) {
             return (
-              <div className={`flex bg-black border relative h-full border-white border-opacity-50 gallery-img ${index > 3 ? 'max-sm:hidden' : ''}`} style={{ height }}>
+              <div className={`flex bg-black border relative h-full border-white border-opacity-50 gallery-img ${index > 3 && hide ? 'max-sm:hidden' : ''}`} style={{ height }}>
                 <Image {...props} fill objectFit='cover' />
                 <span className='z-10 opacity-0 pointer-events-none text-2xl text-sky-600 m-auto !p-2 rounded-xl transition'><TbZoomInFilled /></span>
               </div>
