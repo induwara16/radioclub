@@ -25,7 +25,6 @@
                     this.props.widgetFor('body'),
                     this.props.widgetsFor('gallery').map(function (image, index) {
                         return h('div', { key: index },
-                            h('hr', {}),
                             h('img', { src: image ? getAsset(image.get('data')).toString() : '' }),
                         );
                     })
@@ -33,8 +32,9 @@
             }
         });
 
+
         CMS.registerPreviewTemplate("projects", ProjectPreview);
-        CMS.registerPreviewStyle('img{max-width: 200px !important;}', { raw: true });
+        CMS.registerPreviewStyle('img{max-width: 200px !important;margin-top:10px;}', { raw: true });
     </script>
 </body>
 

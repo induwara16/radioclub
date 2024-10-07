@@ -22,6 +22,13 @@ collections:
       - label: Name
         name: title
         widget: string
+      - label: Start
+        name: start
+        widget: datetime
+      - label: End
+        name: end
+        widget: datetime
+        required: false
       - label: Featured Image,
         name: featured
         widget: image
@@ -61,6 +68,7 @@ collections:
               public_folder: ''
             - {label: Featured, name: featured, widget: boolean, default: false}
             - {label: Title, name: title, widget: string}
+            - {label: Description, name: description, widget: text, required: false}
             - {label: Date, name: date, widget: datetime}
   - name: "home"
     label: "Home Page"

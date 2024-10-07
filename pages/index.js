@@ -15,13 +15,13 @@ import Cover from "../components/Cover";
 import SignupForm from "../components/SignupForm";
 import Gallery from "../components/Gallery";
 
-import { attributes as about, react as AboutBlock } from '../content/about.md';
-import { attributes as social } from '../content/social.md';
-import { attributes as gallery } from '../content/gallery.md';
+import { attributes as _about, react as AboutBlock } from '../content/about.md';
+import { attributes as _social } from '../content/social.md';
+import { attributes as _gallery } from '../content/gallery.md';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
-export default function Index({ }) {
+export default function Index({ about, social, gallery }) {
   const { vision, mission, tic, board } = about;
 
   return (
@@ -50,7 +50,6 @@ export default function Index({ }) {
       <section id='projects' className="cols-1 bg-neutral-900 prose-h4:!mb-1 prose-h4:!text-gray-300/80">
         <div>
           <h1>Our Projects</h1>
-
         </div>
       </section>
 
@@ -62,7 +61,7 @@ export default function Index({ }) {
         <div className="cols-1">
           <div>
             <h1>Gallery</h1>
-            <Gallery pics={gallery.piclist.filter(function (pic) { return pic.featured; })} hide />
+            <Gallery pics={gallery} hide />
             <Link href='/gallery' className="btn btn-fill mx-auto">VIEW ALL PHOTOS</Link>
           </div>
         </div>
@@ -135,4 +134,14 @@ export default function Index({ }) {
       </section>
     </>
   );
+}
+
+export function getStaticProps() {
+  return {
+    props: {
+      gallery: _gallery.piclist.filter(function (pic) { return pic.featured; }),
+      about: _about,
+      social: _social
+    }
+  };
 }

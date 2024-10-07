@@ -33,6 +33,8 @@ board:
     name: Mikesh Ekanayake
   - position: Student Coordinator
     name: Kushmika Mathew
+  - position: Asst. Student Coordinator
+    name: Jineth Yuthmin
 ---
 The Radio Club of Royal College, established in the year 1925 is one of the oldest clubs at Royal College. Formed with the main objective of inspiring young royalists in many fields of radio and technology, it was founded as the Radio Listeners Club by the College Prefects during the tenure of Principal Major H.L. Reed and since has one of the most essential clubs in the school by maintaining and operating much of the audiovisual assets at the College, including the sound systems and the school's PA systems. The club provides services to other clubs and societies on a frequent basis as the technological partners for their occasions on matters which concern electronics, audio, or video, and liaise with other schools on these matters as well.
 

@@ -17,15 +17,23 @@ export default function Gallery({ pics, hide = false }) {
   const [index, setIndex] = useState(-1);
 
   const photos = pics.map(function (pic, i) {
-    const img = require(`../content/gallery/${pic.src}`);
+    const src = require(`../content/gallery/${pic.src}`);
+
+    const desc = (
+      <>
+        {pic.date && new Date(pic.date).toDateString()}
+        {pic.date && pic.description && <br />}
+        {pic.description}
+      </>
+    );
 
     return {
-      src: img,
+      src,
+      description: (pic.date || pic.description) && desc,
       alt: pic.title,
       title: pic.title,
-      description: pic.date ? new Date(pic.date).toDateString() : undefined,
-      width: img.default.width,
-      height: img.default.height,
+      width: src.default.width,
+      height: src.default.height,
       key: `${pic.title}-${i}`
     };
   });
