@@ -1,12 +1,28 @@
-import Link from "next/link";
+import Head from "next/head";
+import Image from "next/image";
+
 import { getProjects } from "../../util/projects";
+import Header from "../../components/Header";
 
-function Test({ children }) {
-  return <h1>{children}</h1>;
-}
+export default function Project({ title, featured, html }) {
+  return (
+    <>
+      <Head>
+        <title key='title'>{title} - The Radio Club</title>
+        <meta key='og-title' property="og:title" content={`${title} - The Radio Club`} />
+      </Head>
 
-export default function Project({ html }) {
-  return <>{html}</>;
+      <Header text={title} />
+
+      <section className="bg-neutral-900 cols-1 no-mwn">
+        <div className="mx-auto !text-justify">
+          <Image alt={title} className="!mt-0" src={require(`../../content/gallery/${featured}`)} />
+          <span></span>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+      </section>
+    </>
+  );
 }
 
 export function getStaticProps({ params: { name } }) {

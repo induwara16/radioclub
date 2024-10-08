@@ -30,7 +30,7 @@
 }
 
 .cols-2 > div {
-    @apply prose prose-invert flex flex-col basis-1/2;
+    @apply prose flex flex-col basis-1/2;
 }
 
 .cols-1 {
@@ -38,7 +38,15 @@
 }
 
 .cols-1 > div {
-    @apply prose prose-invert !max-w-none text-center;
+    @apply prose text-center;
+}
+
+.prose {
+    @apply prose-invert hover:prose-a:text-sky-600;
+}
+
+.cols-1:not(.no-mwn) {
+    @apply !max-w-none;
 }
 
 :not(.bgo *) {
