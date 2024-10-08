@@ -5,6 +5,8 @@ import { getProjects } from "../../util/projects";
 import Header from "../../components/Header";
 
 export default function Project({ title, featured, html }) {
+  console.log(title);
+
   return (
     <>
       <Head>

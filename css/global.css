@@ -45,7 +45,7 @@
     @apply prose-invert hover:prose-a:text-sky-600;
 }
 
-.cols-1:not(.no-mwn) {
+.cols-1:not(.no-mwn)>div {
     @apply !max-w-none;
 }
 
