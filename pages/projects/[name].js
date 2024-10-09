@@ -5,12 +5,10 @@ import { getProjects } from "../../util/projects";
 import Header from "../../components/Header";
 
 export default function Project({ title, featured, html }) {
-  console.log(title);
-
   return (
     <>
       <Head>
-        <title key='title'>{title} - The Radio Club</title>
+        <title key='title'>{`${title} - The Radio Club`}</title>
         <meta key='og-title' property="og:title" content={`${title} - The Radio Club`} />
       </Head>
 

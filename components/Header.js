@@ -10,7 +10,7 @@ export default function Header({ text }) {
       imgclass="opacity-80 !object-center !fixed"
       containerclass="text-center text-white my-auto px-5 xs:px-8 sm:px-16 py-12 sm:py-16">
 
-      <h2 className="text-6xl font-bold">{text}</h2>
+      <h2 className="text-4xl xs:text-5xl sm:text-6xl font-bold">{text}</h2>
     </Cover>
   );
 }
