@@ -1,5 +1,5 @@
 ---
-title: TechEdge '24
+title: Tech Edge '24
 start: 2024-07-04T00:00:00.000Z
 end: 2024-11-15T00:00:00.000Z
 featured: screenshot-from-2024-10-06-16-24-31.png
