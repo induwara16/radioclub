@@ -8,8 +8,6 @@ import Header from "../../components/Header";
 import Gallery from "../../components/Gallery";
 
 export default function Project({ title, featured, html, start, end, status, gallery }) {
-  console.log(gallery);
-
   return (
     <>
       <Head>
