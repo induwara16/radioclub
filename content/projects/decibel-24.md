@@ -1,6 +1,6 @@
 ---
 title: Decibel '24
-start: 2024-04-07T00:00:00.000Z
+start: 2024-07-04T00:00:00.000Z
 featured: untitled.png
 gallery:
   - 451197672_808897691366190_3497828970029279728_n-1-.jpg
