@@ -3,10 +3,13 @@ import Image from "next/image";
 
 import { TiCalendar } from "react-icons/ti";
 
-import { formatDate, getProjects } from "../../util/projects";
+import { getProjectProps, getProjects } from "../../util/projects";
 import Header from "../../components/Header";
+import Gallery from "../../components/Gallery";
 
-export default function Project({ title, featured, html, start_str, end, end_str }) {
+export default function Project({ title, featured, html, start, end, status, gallery }) {
+  console.log(gallery);
+
   return (
     <>
       <Head>
@@ -20,17 +23,21 @@ export default function Project({ title, featured, html, start_str, end, end_str
         <div className="mx-auto !text-justify">
           <Image alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
 
-          <div className="text-gray-400 text-sm flex font-semibold gap-2">
-            <span className="flex">
-              <TiCalendar className="text-lg mr-1" /> {start_str} {end && <><span className="mx-1.5">—</span> {end_str}</>}
-            </span>
+          <div className={`flex font-semibold gap-2 ${end ? 'max-[380px]:flex-col' : ''}`}>
+            <label className="flex my-auto text-gray-400 text-sm mr-2">
+              <TiCalendar className="text-lg mr-1" /> {start} {end && <><span className="mx-1.5">—</span> {end}</>}
+            </label>
 
-
+            <label className={`${status === 'concluded' ? 'bg-sky-600' : status === 'ongoing' ? 'bg-green-500' : 'bg-gray-500'} px-1.5 py-1 text-xs text-white rounded mr-auto`}>
+              {status.toUpperCase()}
+            </label>
           </div>
 
           <hr className="!mt-4 !mb-8" />
 
           <div dangerouslySetInnerHTML={{ __html: html }} />
+
+          <Gallery pics={gallery} />
         </div>
       </section>
     </>
@@ -38,15 +45,8 @@ export default function Project({ title, featured, html, start_str, end, end_str
 }
 
 export function getStaticProps({ params: { name } }) {
-  const { attributes, html } = require(`../../content/projects/${name}.md`);
-
   return {
-    props: {
-      ...attributes,
-      html,
-      start_str: formatDate(attributes.start),
-      end_str: formatDate(attributes.end)
-    }
+    props: getProjectProps(name)
   };
 }
 
