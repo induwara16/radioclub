@@ -42,7 +42,7 @@ export default function Gallery({ pics, hide = false }) {
   function NextJSSlide({ slide: { width, height, key, ...slide } }) {
     return (
       <div style={{ width, height }}>
-        <Image {...slide} objectFit='contain' fill />
+        <Image {...slide} alt='' objectFit='contain' fill />
       </div>);
   }
 
@@ -56,7 +56,7 @@ export default function Gallery({ pics, hide = false }) {
           image: function (props, { index, height }) {
             return (
               <div className={`flex bg-black border relative h-full border-white border-opacity-50 gallery-img ${index > 3 && hide ? 'max-sm:hidden' : ''}`} style={{ height }}>
-                <Image {...props} fill objectFit='cover' />
+                <Image {...props} fill objectFit='cover' alt='' />
                 <span className='z-10 opacity-0 pointer-events-none text-2xl text-sky-600 m-auto !p-2 rounded-xl transition'><TbZoomInFilled /></span>
               </div>
             );
