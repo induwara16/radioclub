@@ -1,5 +1,6 @@
 ---
 title: Decibel '24
+pinned: false
 start: 2024-07-04T00:00:00.000Z
 featured: untitled.png
 gallery:

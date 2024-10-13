@@ -11,7 +11,7 @@ export function getProjectProps(name) {
   const { attributes: { start, end, gallery, ...attributes }, html } = require(`../content/projects/${name}.md`);
 
   let status = '';
-  const s = new Date(start), e = new Date(end), n = Date.now();
+  const s = new Date(start), e = new Date(end), n = new Date();
 
   if (e && (s < n && e > n)) {
     status = 'ongoing';

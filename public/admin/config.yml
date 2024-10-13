@@ -22,6 +22,10 @@ collections:
       - label: Name
         name: title
         widget: string
+      - label: Pinned
+        name: pinned
+        widget: boolean
+        default: false
       - label: Start
         name: start
         widget: datetime

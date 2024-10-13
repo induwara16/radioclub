@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from 'next/link';
 import { Sora } from 'next/font/google';
 
+import excerpts from 'excerpts';
+
 import {
   TiSocialFacebookCircular,
   TiSocialInstagramCircular,
@@ -14,6 +16,8 @@ import signup_bg from '../images/signup-bg.png';
 import Cover from "../components/Cover";
 import SignupForm from "../components/SignupForm";
 import Gallery from "../components/Gallery";
+import ProjectCarousel from "../components/ProjectsCarousel";
+import { getProjectProps, getProjects } from "../util/projects";
 
 import { attributes as _about, react as AboutBlock } from '../content/about.md';
 import { attributes as _social } from '../content/social.md';
@@ -21,7 +25,7 @@ import { attributes as _gallery } from '../content/gallery.md';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
-export default function Index({ about, social, gallery }) {
+export default function Index({ about, social, gallery, projects }) {
   const { vision, mission, tic, board } = about;
 
   return (
@@ -49,7 +53,8 @@ export default function Index({ about, social, gallery }) {
 
       <section id='projects' className="cols-1 bg-neutral-900 prose-h4:!mb-1 prose-h4:!text-gray-300/80">
         <div>
-          <h1>Our Projects</h1>
+          <h1 className="!mb-3">The Year</h1>
+          <ProjectCarousel projects={projects} />
         </div>
       </section>
 
@@ -141,7 +146,18 @@ export function getStaticProps() {
     props: {
       gallery: _gallery.piclist.filter(function (pic) { return pic.featured; }),
       about: _about,
-      social: _social
+      social: _social,
+      projects: getProjects().map(function (slug) {
+        const { gallery, html, ...project } = getProjectProps(slug);
+        return { slug, text: excerpts(html, { characters: 120 }), ...project };
+      }).filter(function (project) {
+        return new Date(project.start).getFullYear() === new Date().getFullYear();
+      }).sort(function (a, b) {
+        if (a.pinned !== b.pinned)
+          return a.pinned ? -1 : 1;
+
+        return new Date(b.start) - new Date(a.start);
+      })
     }
   };
 }

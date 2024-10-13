@@ -1,5 +1,6 @@
 ---
 title: FM Royal '24
+pinned: true
 start: 2024-09-04T00:00:00.000Z
 end: 2024-09-08T00:00:00.000Z
 featured: untitled-f000208.png
