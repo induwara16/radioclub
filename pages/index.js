@@ -156,6 +156,14 @@ export function getStaticProps() {
         if (a.pinned !== b.pinned)
           return a.pinned ? -1 : 1;
 
+        if (a.status === 'ongoing' && b.status !== 'ongoing') {
+          return -1;
+        }
+
+        if (a.status !== 'ongoing' && b.status === 'ongoing') {
+          return 1;
+        }
+
         return new Date(b.start) - new Date(a.start);
       })
     }
