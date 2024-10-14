@@ -1,13 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { TiCalendar } from "react-icons/ti";
-
+import { FacebookIcon, FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton, XIcon } from "react-share";
+import { TbShare } from "react-icons/tb";
 import { getProjectProps, getProjects } from "../../util/projects";
+
 import Header from "../../components/Header";
 import Gallery from "../../components/Gallery";
+import { ProjectDate, ProjectStatus } from "../../components/ProjectsCarousel";
 
-export default function Project({ title, featured, html, start, end, status, gallery }) {
+export default function Project({ title, featured, html, start, end, status, gallery, name }) {
+  const url = `/projects/${name}`;
+
   return (
     <>
       <Head>
@@ -21,20 +25,26 @@ export default function Project({ title, featured, html, start, end, status, gal
         <div className="mx-auto !text-justify">
           <Image alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
 
-          <div className={`flex font-semibold gap-2 ${end ? 'max-[380px]:flex-col' : ''}`}>
-            <label className="flex my-auto text-gray-400 text-sm mr-2">
-              <TiCalendar className="text-lg mr-1" /> {start} {end && <><span className="mx-1.5">—</span> {end}</>}
-            </label>
-
-            <label className={`${status === 'concluded' ? 'bg-sky-600' : status === 'ongoing' ? 'bg-green-500' : 'bg-gray-500'} px-1.5 py-1 text-xs text-white rounded mr-auto`}>
-              {status.toUpperCase()}
-            </label>
+          <div className="flex max-[600px]:flex-col gap-3">
+            <div className={`flex font-semibold gap-2 mr-4 ${end ? 'max-[380px]:flex-col' : ''}`}>
+              <ProjectDate start={start} end={end} />
+              <ProjectStatus status={status} />
+            </div>
+            <div className="flex gap-x-1.5">
+              <FacebookShareButton url={url} title={title}>
+                <FacebookIcon className="rounded-full size-7" />
+              </FacebookShareButton>
+              <TwitterShareButton url={url} title={title}>
+                <XIcon className="rounded-full size-7" />
+              </TwitterShareButton>
+              <WhatsappShareButton url={url} title={title}>
+                <WhatsappIcon className="rounded-full size-7" />
+              </WhatsappShareButton>
+            </div>
           </div>
 
           <hr className="!mt-4 !mb-8" />
-
           <div dangerouslySetInnerHTML={{ __html: html }} />
-
           <Gallery pics={gallery} />
         </div>
       </section>

@@ -147,9 +147,9 @@ export function getStaticProps() {
       gallery: _gallery.piclist.filter(function (pic) { return pic.featured; }),
       about: _about,
       social: _social,
-      projects: getProjects().map(function (slug) {
-        const { gallery, html, ...project } = getProjectProps(slug);
-        return { slug, text: excerpts(html, { characters: 120 }), ...project };
+      projects: getProjects().map(function (name) {
+        const { gallery, html, ...project } = getProjectProps(name);
+        return { text: excerpts(html, { words: 25 }), ...project };
       }).filter(function (project) {
         return new Date(project.start).getFullYear() === new Date().getFullYear();
       }).sort(function (a, b) {

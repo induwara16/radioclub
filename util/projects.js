@@ -22,6 +22,7 @@ export function getProjectProps(name) {
 
   return {
     ...attributes,
+    name,
     html,
     start: formatDate(start),
     end: end ? formatDate(end) : null,

@@ -1,25 +1,37 @@
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
-import { TiCalendar } from 'react-icons/ti';
+import { TiCalendar } from "react-icons/ti";
+
+export function ProjectDate({ start, end }) {
+  return (
+    <label className="flex my-auto text-gray-400 text-sm mr-1.5 font-semibold">
+      <TiCalendar className="text-lg mr-1" />
+      {start} {end && <><span className="mx-1.5">—</span> {end}</>}
+    </label>
+  );
+}
+
+export function ProjectStatus({ status }) {
+  return (
+    <label className={`${status === 'concluded' ? 'bg-sky-600' : status === 'ongoing' ? 'bg-green-500' : 'bg-gray-500'} px-1.5 py-1 text-xs not-prose text-white rounded mr-auto font-semibold my-auto`}>
+      {status.toUpperCase()}
+    </label>
+  );
+}
 
 export default function ProjectCarousel({ projects }) {
-  const router = useRouter();
-
   return (
     <Carousel
       itemClass='!list-none !p-0'
       arrows
-      autoPlaySpeed={3000}
+      autoPlay
+      autoPlaySpeed={5000}
+      shouldResetAutoplay
       sliderClass='!p-0'
-      draggable
-      infinite
-      keyBoardControl
-      focusOnSelect
-      minimumTouchDrag={80}
       pauseOnHover
       responsive={{
         desktop: {
@@ -52,33 +64,30 @@ export default function ProjectCarousel({ projects }) {
       slidesToSlide={1}
       swipeable
       ssr
+      showDots
+      dotListClass='not-prose'
     >
-      {projects.map(function (project, i) {
+      {projects.map(function ({ title, featured, status, text, name, start, end }, i) {
         return (
-          <div
-            key={`project-${i}`}
-            className='bg-neutral-800 m-3 cursor-pointer shadow-2xl hover:scale-105 transition'
-            onClick={function () { router.push(`/projects/${project.slug}`); }}>
-            <div className='h-48 relative pointer-events-none'>
+          <div key={`project-${i}`} className='bg-neutral-800 m-3 shadow-2xl border border-white border-opacity-25 transition hover:bg-neutral-700'>
+            <div className='h-48 relative'>
               <Image
-                className='!mt-0'
+                className='!mt-0 border-b border-opacity-25 border-white'
                 layout='fill'
                 objectPosition='center'
                 objectFit='cover'
-                alt={project.title}
-                src={require(`../content/gallery/${project.featured}`)} />
+                alt={title}
+                src={require(`../content/gallery/${featured}`)} />
             </div>
             <div className='px-4 py-3 flex flex-col'>
               <div className='flex items-center mb-2 mt-4'>
-                <h2 className='!my-0 mr-3'>{project.title}</h2>
-                <label className={`${project.status === 'concluded' ? 'bg-sky-600' : project.status === 'ongoing' ? 'bg-green-500' : 'bg-gray-500'} px-1.5 py-1 text-xs my-auto not-prose text-white rounded mr-auto font-semibold`}>
-                  {project.status.toUpperCase()}
-                </label>
+                <h2 className='!my-0 mr-3 max-xs:!text-[1.3rem]'>{title}</h2>
+                <ProjectStatus status={status} />
               </div>
-              <label className="flex my-auto text-gray-400 text-sm mr-2 font-semibold">
-                <TiCalendar className="text-lg mr-1" /> {project.start} {project.end && <><span className="mx-1.5">—</span> {project.end}</>}
-              </label>
-              <p className='text-justify text-gray-400'>{project.text}</p>
+
+              <ProjectDate start={start} end={end} />
+              <p className='overflow-hidden h-40 text-justify text-gray-400'>{text}</p>
+              <Link href={`/projects/${name}`} className='btn btn-fill !py-2 mb-2'>READ MORE</Link>
             </div>
           </div>
         );
