@@ -88,7 +88,7 @@ export default function ProjectCarousel({ projects }) {
               </div>
 
               <ProjectDate start={start} end={end} />
-              <ClampLines text={text} id={name} className='text-justify text-gray-400 my-5' buttons={false} lines={5} />
+              <ClampLines text={text} id={name} className='text-left text-gray-400 my-5' buttons={false} lines={5} />
               <Link href={`/projects/${name}`} className='btn btn-fill !py-2 mb-2'>READ MORE</Link>
             </div>
           </div>

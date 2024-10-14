@@ -91,7 +91,7 @@ export default function Index({ about, social, gallery, projects }) {
             <ul>
               <li><span className="font-medium mr-1">Teacher-in-Charge:</span> {tic}</li>
               {board.map(function (member) {
-                return (<li key={member.position} className="!m-0"><span className="font-medium mr-1">{member.position}:</span> {member.name}</li>);
+                return (<li key={member.position} className="!mx-0 lg:!my-0"><span className="font-medium mr-1">{member.position}:</span><wbr /> {member.name}</li>);
               })}
             </ul>
           </div>

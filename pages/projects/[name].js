@@ -28,7 +28,7 @@ export default function Project({ title, featured, html, start, end, status, gal
       <Header text={title} />
 
       <section className="bg-neutral-900 cols-1 no-mwn">
-        <div className="mx-auto !text-justify">
+        <div className="mx-auto !text-left">
           <Image alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
 
           <div className="flex max-[600px]:flex-col gap-3">
