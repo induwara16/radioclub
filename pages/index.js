@@ -149,7 +149,7 @@ export function getStaticProps() {
       social: _social,
       projects: getProjects().map(function (name) {
         const { gallery, html, ...project } = getProjectProps(name);
-        return { text: excerpts(html, { words: 25 }), ...project };
+        return { text: excerpts(html, { words: 150 }), ...project };
       }).filter(function (project) {
         return new Date(project.start).getFullYear() === new Date().getFullYear();
       }).sort(function (a, b) {

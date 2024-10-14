@@ -81,3 +81,11 @@ form span.form-error {
 .gallery-img:hover > span {
     @apply !opacity-100;
 }
+
+.react-multi-carousel-dot--active > button {
+    @apply !bg-sky-600 !border-sky-600;
+}
+
+.react-multi-carousel-dot:not(.react-multi-carousel-dot--active) > button {
+    @apply !border-gray-400;
+}

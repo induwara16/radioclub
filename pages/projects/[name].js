@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 
 import { FacebookIcon, FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton, XIcon } from "react-share";
-import { TbShare } from "react-icons/tb";
 import { getProjectProps, getProjects } from "../../util/projects";
 
 import Header from "../../components/Header";
@@ -10,7 +11,12 @@ import Gallery from "../../components/Gallery";
 import { ProjectDate, ProjectStatus } from "../../components/ProjectsCarousel";
 
 export default function Project({ title, featured, html, start, end, status, gallery, name }) {
-  const url = `/projects/${name}`;
+  const share = `${title} By RCRC\n`;
+  const [url, setUrl] = useState('');
+
+  useEffect(function () {
+    setUrl(window.location.href);
+  }, []);
 
   return (
     <>
@@ -31,13 +37,13 @@ export default function Project({ title, featured, html, start, end, status, gal
               <ProjectStatus status={status} />
             </div>
             <div className="flex gap-x-1.5">
-              <FacebookShareButton url={url} title={title}>
+              <FacebookShareButton url={url}>
                 <FacebookIcon className="rounded-full size-7" />
               </FacebookShareButton>
-              <TwitterShareButton url={url} title={title}>
+              <TwitterShareButton url={url} title={share}>
                 <XIcon className="rounded-full size-7" />
               </TwitterShareButton>
-              <WhatsappShareButton url={url} title={title}>
+              <WhatsappShareButton url={url} title={share}>
                 <WhatsappIcon className="rounded-full size-7" />
               </WhatsappShareButton>
             </div>

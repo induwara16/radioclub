@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import ClampLines from 'react-clamp-lines';
+
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
@@ -28,7 +30,7 @@ export default function ProjectCarousel({ projects }) {
     <Carousel
       itemClass='!list-none !p-0'
       arrows
-      autoPlay
+
       autoPlaySpeed={5000}
       shouldResetAutoplay
       sliderClass='!p-0'
@@ -86,7 +88,7 @@ export default function ProjectCarousel({ projects }) {
               </div>
 
               <ProjectDate start={start} end={end} />
-              <p className='overflow-hidden h-40 text-justify text-gray-400'>{text}</p>
+              <ClampLines text={text} id={name} className='text-justify text-gray-400 my-5' buttons={false} lines={5} />
               <Link href={`/projects/${name}`} className='btn btn-fill !py-2 mb-2'>READ MORE</Link>
             </div>
           </div>
