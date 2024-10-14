@@ -71,7 +71,7 @@ export default function ProjectCarousel({ projects }) {
     >
       {projects.map(function ({ title, featured, status, text, name, start, end }, i) {
         return (
-          <div key={`project-${i}`} className='bg-neutral-800 m-3 shadow-2xl border border-white border-opacity-25 transition hover:bg-neutral-700'>
+          <div key={`project-${i}`} className='bg-neutral-800 m-1 xs:m-3 shadow-2xl border border-white border-opacity-25 transition hover:bg-neutral-700'>
             <div className='h-48 relative'>
               <Image
                 className='!mt-0 border-b border-opacity-25 border-white'
