@@ -26,7 +26,7 @@
 }
 
 .cols-2 {
-   @apply flex max-md:flex-col gap-14 md:gap-x-16 lg:gap-x-24 px-8 xs:px-12 py-16 md:px-20 lg:px-32 md:py-20;
+   @apply flex max-md:flex-col gap-14 md:gap-x-16 lg:gap-x-24 px-6 xs:px-12 py-16 md:px-20 lg:px-32 md:py-20;
 }
 
 .cols-2 > div {
@@ -34,7 +34,7 @@
 }
 
 .cols-1 {
-    @apply flex flex-col px-8 xs:px-12 py-14 md:px-20 lg:px-32 md:py-16 gap-14;
+    @apply flex flex-col px-6 xs:px-12 py-14 md:px-20 lg:px-32 md:py-16 gap-14;
 }
 
 .cols-1 > div {
