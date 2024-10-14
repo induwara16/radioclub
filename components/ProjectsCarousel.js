@@ -30,16 +30,16 @@ export default function ProjectCarousel({ projects }) {
     <Carousel
       itemClass='!list-none !p-0'
       arrows
-
+      autoPlay
       autoPlaySpeed={5000}
       shouldResetAutoplay
-      sliderClass='!p-0'
+      sliderClass='!p-0 !mb-7'
       pauseOnHover
       responsive={{
         desktop: {
           breakpoint: {
             max: 3000,
-            min: 1024
+            min: 1240
           },
           items: 3,
           partialVisibilityGutter: 40
@@ -54,7 +54,7 @@ export default function ProjectCarousel({ projects }) {
         },
         tablet: {
           breakpoint: {
-            max: 1024,
+            max: 1239,
             min: 845
           },
           items: 2,
