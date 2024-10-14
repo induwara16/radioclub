@@ -43,7 +43,7 @@ export default function Project({ title, featured, html, start, end, status, gal
               <TwitterShareButton url={url} title={share}>
                 <XIcon className="rounded-full size-7" />
               </TwitterShareButton>
-              <WhatsappShareButton url={url} title={share}>
+              <WhatsappShareButton url={url} title={share} seperator=''>
                 <WhatsappIcon className="rounded-full size-7" />
               </WhatsappShareButton>
             </div>
