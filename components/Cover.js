@@ -10,7 +10,8 @@ export default function Cover({ children, src, imgclass, overlayclass, container
         objectFit="cover"
         objectPosition="top"
         src={src}
-        alt="" />
+        alt=""
+        placeholder='blur' />
 
       <div className={`flex z-10 flex-col ${containerclass}`}>
         {children}

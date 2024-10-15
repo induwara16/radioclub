@@ -29,9 +29,9 @@ export default function Project({ title, featured, html, start, end, status, gal
       <Header text={title} />
 
       <section className="bg-neutral-900 cols-1 no-mwn">
-        <ScrollAnimation animateOnce animateIn="animate__fadeIn" className="mx-auto !text-left">
-          <Image alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
 
+        <ScrollAnimation animateOnce animateIn="animate__fadeIn" className="mx-auto !text-left">
+          <Image placeholder="blur" alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
           <div className="flex max-[600px]:flex-col gap-3">
             <div className={`flex font-semibold gap-2 mr-4 ${end ? 'max-[380px]:flex-col' : ''}`}>
               <ProjectDate start={start} end={end} />

@@ -79,7 +79,8 @@ export default function ProjectCarousel({ projects }) {
                 objectPosition='center'
                 objectFit='cover'
                 alt={title}
-                src={require(`../content/gallery/${featured}`)} />
+                src={require(`../content/gallery/${featured}`)}
+                placeholder='blur' />
             </div>
             <div className='px-4 py-3 flex flex-col'>
               <div className='flex items-center mb-2 mt-4'>
