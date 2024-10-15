@@ -74,7 +74,7 @@ export default function Index({ about, social, gallery, projects }) {
 
           <Gallery pics={gallery} hide />
 
-          <ScrollAnimation animateIn="animate__slideInLeft" animateOnce className="mt-4 xs:mt-8">
+          <ScrollAnimation animateIn="animate__zoomIn" animateOnce className="mt-4 xs:mt-8">
             <Link href='/gallery' className="btn btn-fill mx-auto">VIEW ALL PHOTOS</Link>
           </ScrollAnimation>
         </div>
