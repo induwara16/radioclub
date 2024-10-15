@@ -33,7 +33,7 @@ export default function ProjectCarousel({ projects }) {
       autoPlay
       autoPlaySpeed={5000}
       shouldResetAutoplay
-      sliderClass='!p-0 !mb-7'
+      sliderClass='!p-0 !mb-8 xs:!mb-7'
       pauseOnHover
       responsive={{
         desktop: {
@@ -71,7 +71,7 @@ export default function ProjectCarousel({ projects }) {
     >
       {projects.map(function ({ title, featured, status, text, name, start, end }, i) {
         return (
-          <div key={`project-${i}`} className='bg-neutral-800 m-1 xs:m-3 shadow-2xl border border-white border-opacity-25 transition hover:bg-neutral-700'>
+          <div key={`project-${i}`} className='bg-neutral-800 m-1 xs:m-3 shadow-2xl border border-white border-opacity-25 transition hover:bg-neutral-700 z-[1000]'>
             <div className='h-48 relative'>
               <Image
                 className='!mt-0 border-b border-opacity-25 border-white'

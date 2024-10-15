@@ -1,7 +1,8 @@
+import { Rubik } from "next/font/google";
+
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-
-import { Rubik } from "next/font/google";
+import ScrollToTop from "./ScrollToTop";
 
 const rubik = Rubik({
   variable: '--font-rubik',
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
 
       <Navbar />
       <main className="flex flex-col">{children}</main>
+      <ScrollToTop />
       <Footer />
     </div>
   );

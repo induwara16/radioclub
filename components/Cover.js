@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollAnimation from "react-animate-on-scroll";
 
 export default function Cover({ children, src, imgclass, overlayclass, containerclass, ...props }) {
   return (

@@ -9,6 +9,7 @@ import { getProjectProps, getProjects } from "../../util/projects";
 import Header from "../../components/Header";
 import Gallery from "../../components/Gallery";
 import { ProjectDate, ProjectStatus } from "../../components/ProjectsCarousel";
+import ScrollAnimation from "react-animate-on-scroll";
 
 export default function Project({ title, featured, html, start, end, status, gallery, name }) {
   const share = `${title} By RCRC\n`;
@@ -28,7 +29,7 @@ export default function Project({ title, featured, html, start, end, status, gal
       <Header text={title} />
 
       <section className="bg-neutral-900 cols-1 no-mwn">
-        <div className="mx-auto !text-left">
+        <ScrollAnimation animateOnce animateIn="animate__fadeIn" className="mx-auto !text-left">
           <Image alt={title} className="!mt-0 !mb-5" src={require(`../../content/gallery/${featured}`)} />
 
           <div className="flex max-[600px]:flex-col gap-3">
@@ -52,7 +53,7 @@ export default function Project({ title, featured, html, start, end, status, gal
           <hr className="!mt-4 !mb-8" />
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <Gallery pics={gallery} />
-        </div>
+        </ScrollAnimation>
       </section>
     </>
   );
