@@ -14,10 +14,12 @@ import landing_bg from '../images/landing-bg.jpg';
 import signup_bg from '../images/signup-bg.png';
 
 import Cover from "../components/Cover";
-import SignupForm from "../components/SignupForm";
 import Gallery from "../components/Gallery";
 import ProjectCarousel from "../components/ProjectsCarousel";
+import Form, { Error, Field } from "../components/Form";
+
 import { getProjectProps, getProjects } from "../util/projects";
+import { signup, contact } from "../util/schemas";
 
 import { attributes as _about, react as AboutBlock } from '../content/about.md';
 import { attributes as _social } from '../content/social.md';
@@ -121,7 +123,23 @@ export default function Index({ about, social, gallery, projects }) {
             <a className="btn btn-fill mr-auto mt-5" href='#contact'>CONTACT US</a>
           </ScrollAnimation>
           <ScrollAnimation animateOnce animateIn="animate__slideInRight">
-            <SignupForm />
+            <Form submit='JOIN US' api='signup' schema={signup}>
+              <div>
+                <label>Your Name:</label>
+                <Field name='name' type="text" />
+                <Error name='name' />
+              </div>
+              <div>
+                <label>Your Class:</label>
+                <Field name='class' type="text" />
+                <Error name='class' />
+              </div>
+              <div className='mb-8'>
+                <label>WhatsApp Number:</label>
+                <Field name='whatsapp' type="text" />
+                <Error name='whatsapp' />
+              </div>
+            </Form>
           </ScrollAnimation>
         </div>
       </Cover>
@@ -139,10 +157,28 @@ export default function Index({ about, social, gallery, projects }) {
         </ScrollAnimation>
       </section>
 
-      <section className="cols-1 bg-[#1d1d1d] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+      <section className="cols-2 bg-[#1d1d1d] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+        <div className="text-left">
+          <Form submit='SEND MESSAGE' api='contact' schema={contact}>
+            <div>
+              <label>Your Name:</label>
+              <Field name='name' type="text" />
+              <Error name='name' />
+            </div>
+            <div>
+              <label>Your E-mail:</label>
+              <Field name='email' type="email" />
+              <Error name='email' />
+            </div>
+            <div className='mb-8'>
+              <label>Message:</label>
+              <Field name='message' as="textarea" type='text' />
+              <Error name='message' />
+            </div>
+          </Form>
+        </div>
         <div>
-          <h1>Get In Touch</h1>
-
+          <AboutBlock />
         </div>
       </section>
     </>

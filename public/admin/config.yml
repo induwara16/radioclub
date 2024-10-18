@@ -92,13 +92,14 @@ collections:
         fields:
           - { label: "Position", name: "position", widget: "string"}
           - { label: "Name", name: "name", widget: "string"}
-    - label: 'Sign Up Form'
-      name: 'signup'
-      file: content/signup.md
+    - label: 'Forms'
+      name: 'forms'
+      file: content/forms.md
       fields:
       - { label: 'Google Service Account Email', name: 'email', widget: 'string'}
       - { label: 'Private Key', name: 'key', widget: 'text'}
-      - { label: 'Spreadsheet ID', name: 'id', widget: 'string'}
+      - { label: 'Signup Spreadsheet ID', name: 'signup_id', widget: 'string'}
+      - { label: 'Contact Spreadsheet ID', name: 'contact_id', widget: 'string'}
     - label: 'Social Links'
       name: 'social'
       file: content/social.md

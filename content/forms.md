@@ -29,5 +29,6 @@ key: |-
   8LLXH3qsoCfhpkQHS3TNFqZqkyBKbzl949yYap+gAXU5MnWESiT3AnS7Xpx6QJnH
   qBSbsStqjoH1VRQQHi2sZPky
   -----END PRIVATE KEY-----
-id: 1xR-JRV5oCR6s0uso7w-SuBpd2vqCtMSIyWgxa9RqPSE
+signup_id: 1xR-JRV5oCR6s0uso7w-SuBpd2vqCtMSIyWgxa9RqPSE
+contact_id: 1lDwImfYGybCClu7t2uKnbWEu3yr6SCHJlcZC7keWYxc
 ---

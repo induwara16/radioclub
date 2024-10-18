@@ -1,16 +1,26 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { object, string, number } from 'yup';
+import { useMemo } from 'react';
+import { Formik, Field as _Field, Form as _Form, ErrorMessage } from 'formik';
 
-export const schema = object({
-  name: string().trim().required().label('Name'),
-  class: string().uppercase().trim().required().label('Class'),
-  whatsapp: string().matches(/^\d+$/g, 'Must only contain digits from 0-9').min(10).required().label('WhatsApp no.')
-});
+export const Field = _Field;
 
-export default function SignupForm() {
+export function Error({ name }) {
   function ErrorContainer({ children }) {
     return <span className='form-error'>{children}</span>;
   }
+
+  return <ErrorMessage name={name} component={ErrorContainer} />
+}
+
+export default function Form({ schema, api, children, submit }) {
+  const fields = useMemo(function () {
+    var fields = schema.describe().fields;
+
+    Object.keys(fields).forEach(function (f) {
+      fields[f] = '';
+    });
+
+    return fields;
+  }, [schema]);
 
   return (
     <Formik
@@ -19,13 +29,9 @@ export default function SignupForm() {
         show: 'hide',
         error: false
       }}
-      initialValues={{
-        name: '',
-        class: '',
-        whatsapp: ''
-      }}
+      initialValues={fields}
       onSubmit={async function (values, { resetForm, setStatus }) {
-        const resp = await fetch('/api/signup', {
+        const resp = await fetch(`/api/${api}`, {
           method: 'POST',
           body: JSON.stringify(values)
         });
@@ -45,25 +51,11 @@ export default function SignupForm() {
       }}>
       {function ({ isSubmitting, setStatus, status }) {
         return (
-          <Form>
-            <div>
-              <label>Your Name:</label>
-              <Field name='name' type="text" />
-              <ErrorMessage name='name' component={ErrorContainer} />
-            </div>
-            <div>
-              <label>Your Class:</label>
-              <Field name='class' type="text" />
-              <ErrorMessage name='class' component={ErrorContainer} />
-            </div>
-            <div className='mb-8'>
-              <label>WhatsApp Number:</label>
-              <Field name='whatsapp' type="text" />
-              <ErrorMessage name='whatsapp' component={ErrorContainer} />
-            </div>
+          <_Form>
+            {children}
 
             <div className='flex flex-row gap-x-6'>
-              <button type="submit" className="btn btn-fill" disabled={isSubmitting}>JOIN RCRC</button>
+              <button type="submit" className="btn btn-fill" disabled={isSubmitting}>{submit}</button>
               {isSubmitting &&
                 <div className='size-6 my-auto rounded-full bg-gray-500 animate-spin bg-opacity-70'>
                   <div className='size-1.5 my-auto rounded-full bg-gray-200 relative top-1.5 left-1.5' />
@@ -79,10 +71,10 @@ export default function SignupForm() {
               }}>
               {status.error ?
                 'Could not submit the form due to a server error! Please try again' :
-                'Thank you for submitting the form, you will be added to our WhatsApp group shortly'
+                'Thank you for submitting the form, your response has been recorded'
               }
             </div>
-          </Form>
+          </_Form>
         );
       }}
     </Formik>

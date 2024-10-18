@@ -8,6 +8,8 @@
     }
 }
 
+/* Buttons */
+
 .btn {
     @apply p-3 px-5 font-medium border-sky-600 border-2 transition duration-500 !no-underline !text-white;
 }
@@ -24,6 +26,9 @@
 .btn.btn-outline {
     @apply hover:bg-sky-600;
 }
+
+
+/* Containers */
 
 .cols-2 {
    @apply flex max-md:flex-col gap-14 md:gap-x-16 lg:gap-x-24 px-6 xs:px-12 py-16 md:px-20 lg:px-32 md:py-20;
@@ -53,6 +58,9 @@
    @apply z-[1]; 
 }
 
+
+/* Forms */
+
 form > div {
     @apply flex flex-col mb-6;
 }
@@ -61,14 +69,21 @@ form label {
     @apply font-semibold mb-1.5;
 }
 
-form input
+form input, form textarea
 {
     @apply ring-sky-600 text-zinc-800/80;
+}
+
+form textarea {
+    @apply h-36;
 }
 
 form span.form-error {
     @apply text-red-500 mt-1;
 }
+
+
+/* Gallery images */
 
 .gallery-img>img {
     @apply transition;
@@ -81,6 +96,9 @@ form span.form-error {
 .gallery-img:hover > span {
     @apply !opacity-100;
 }
+
+
+/* Carousel */
 
 .react-multi-carousel-dot--active > button {
     @apply !bg-sky-600 !border-sky-600;
