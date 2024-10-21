@@ -11,12 +11,11 @@ import {
 } from 'react-icons/ti';
 
 import landing_bg from '../images/landing-bg.jpg';
-import signup_bg from '../images/signup-bg.png';
 
-import Cover from "../components/Cover";
+import Cover, { OverlayCover } from "../components/Cover";
 import Gallery from "../components/Gallery";
 import ProjectCarousel from "../components/ProjectsCarousel";
-import Form, { Error, Field } from "../components/Form";
+import Form, { Field } from "../components/Form";
 
 import { getProjectProps, getProjects } from "../util/projects";
 import { signup, contact } from "../util/schemas";
@@ -64,11 +63,7 @@ export default function Index({ about, social, gallery, projects }) {
         </ScrollAnimation>
       </section>
 
-      <Cover
-        src={signup_bg}
-        imgclass='opacity-20'
-        overlayclass="bg-gray-950 bg-opacity-85 after:bg-gray-850 after:bg-opacity-60">
-
+      <OverlayCover bg="bg-gray-950">
         <div className="cols-1 !gap-0">
           <ScrollAnimation animateIn="animate__slideInRight" animateOnce>
             <h1>Gallery</h1>
@@ -80,7 +75,7 @@ export default function Index({ about, social, gallery, projects }) {
             <Link href='/gallery' className="btn btn-fill mx-auto">VIEW ALL PHOTOS</Link>
           </ScrollAnimation>
         </div>
-      </Cover>
+      </OverlayCover>
 
       <section id="about" className="bg-neutral-900 prose-h1:!text-transparent prose-h1:bg-gradient-to-r prose-h1:from-sky-600 prose-h1:to-cyan-500 prose-h1:mr-auto prose-h1:bg-clip-text cols-2 !gap-y-6">
         <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="prose-p:md:text-lg prose-p:!mb-8">
@@ -108,12 +103,7 @@ export default function Index({ about, social, gallery, projects }) {
         </ScrollAnimation>
       </section>
 
-      <Cover
-        id="signup"
-        src={signup_bg}
-        imgclass='opacity-20'
-        overlayclass="bg-gray-950 bg-opacity-85 after:bg-gray-850 after:bg-opacity-60">
-
+      <OverlayCover bg="bg-[#1d1d1d] !bg-opacity-70">
         <div className="prose-p:!mt-1 cols-2">
           <ScrollAnimation animateOnce animateIn="animate__slideInLeft">
             <h1>Join RCRC Now!</h1>
@@ -124,25 +114,13 @@ export default function Index({ about, social, gallery, projects }) {
           </ScrollAnimation>
           <ScrollAnimation animateOnce animateIn="animate__slideInRight">
             <Form submit='JOIN US' api='signup' schema={signup}>
-              <div>
-                <label>Your Name:</label>
-                <Field name='name' type="text" />
-                <Error name='name' />
-              </div>
-              <div>
-                <label>Your Class:</label>
-                <Field name='class' type="text" />
-                <Error name='class' />
-              </div>
-              <div className='mb-8'>
-                <label>WhatsApp Number:</label>
-                <Field name='whatsapp' type="text" />
-                <Error name='whatsapp' />
-              </div>
+              <Field name='name' type="text">Your Name</Field>
+              <Field name='class' type="text" >Your Class</Field>
+              <Field name='whatsapp' type='text' className='mb-8'>WhatsApp No</Field>
             </Form>
           </ScrollAnimation>
         </div>
-      </Cover>
+      </OverlayCover>
 
       <section className="cols-1 prose-p:text-lg prose-p:!my-0 bg-neutral-900">
         <ScrollAnimation animateOnce animateIn="animate__backInDown" className="pt-1">
@@ -157,30 +135,20 @@ export default function Index({ about, social, gallery, projects }) {
         </ScrollAnimation>
       </section>
 
-      <section className="cols-2 bg-[#1d1d1d] prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
-        <div className="text-left">
-          <Form submit='SEND MESSAGE' api='contact' schema={contact}>
-            <div>
-              <label>Your Name:</label>
-              <Field name='name' type="text" />
-              <Error name='name' />
-            </div>
-            <div>
-              <label>Your E-mail:</label>
-              <Field name='email' type="email" />
-              <Error name='email' />
-            </div>
-            <div className='mb-8'>
-              <label>Message:</label>
-              <Field name='message' as="textarea" type='text' />
-              <Error name='message' />
-            </div>
-          </Form>
+      <OverlayCover bg='bg-gray-950'>
+        <div className="cols-2 prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
+          <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="text-left">
+            <Form submit='SEND MESSAGE' api='contact' schema={contact}>
+              <Field name='name' type="text">Your Name</Field>
+              <Field name='email' type="email" >Your E-mail</Field>
+              <Field name='message' as="textarea" type='text' className='mb-8'>Message</Field>
+            </Form>
+          </ScrollAnimation>
+          <div>
+            <h1></h1>
+          </div>
         </div>
-        <div>
-          <AboutBlock />
-        </div>
-      </section>
+      </OverlayCover >
     </>
   );
 }

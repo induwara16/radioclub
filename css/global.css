@@ -11,7 +11,7 @@
 /* Buttons */
 
 .btn {
-    @apply p-3 px-5 font-medium border-sky-600 border-2 transition duration-500 !no-underline !text-white;
+    @apply py-3 px-5 font-medium border-sky-600 border-2 transition duration-500 !no-underline !text-white;
 }
 
 .btn:disabled

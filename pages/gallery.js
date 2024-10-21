@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Header from '../components/Header';
+import { Header } from '../components/Cover';
 import GalleryComponent from '../components/Gallery';
 
 import { attributes as _gallery } from '../content/gallery.md';

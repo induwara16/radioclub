@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FacebookIcon, FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton, XIcon } from "react-share";
 import { getProjectProps, getProjects } from "../../util/projects";
 
-import Header from "../../components/Header";
+import { Header } from "../../components/Cover";
 import Gallery from "../../components/Gallery";
 import { ProjectDate, ProjectStatus } from "../../components/ProjectsCarousel";
 import ScrollAnimation from "react-animate-on-scroll";

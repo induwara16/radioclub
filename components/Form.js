@@ -1,15 +1,18 @@
 import { useMemo } from 'react';
 import { Formik, Field as _Field, Form as _Form, ErrorMessage } from 'formik';
 
-export const Field = _Field;
-
-export function Error({ name }) {
+export function Field({ name, children, className = '', ...props }) {
   function ErrorContainer({ children }) {
     return <span className='form-error'>{children}</span>;
   }
-
-  return <ErrorMessage name={name} component={ErrorContainer} />
-}
+  return (
+    <div className={className}>
+      <label>{children}:</label>
+      <_Field name={name} {...props} />
+      <ErrorMessage name={name} component={ErrorContainer} />
+    </div>
+  );
+};
 
 export default function Form({ schema, api, children, submit }) {
   const fields = useMemo(function () {
