@@ -109,12 +109,12 @@ export default function Index({ about, social, gallery, contact_info, projects }
 
       <OverlayCover bg="bg-[#1d1d1d] !bg-opacity-70">
         <div className="prose-p:!mt-1 cols-2">
-          <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="max-md:mb-2">
+          <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="max-md:mb-2 max-md:text-center">
             <h1>Join RCRC Now!</h1>
             <p className="text-xl">Fill the following form to join The Radio Club of Royal College</p>
             <p>We welcome all Royalists from grade 6 and above. Join RCRC to gain vital experience and skills on Event Management, Audio Engineering and Compering!</p>
             <p>If you have any inquiries regarding the club please feel free to contact us</p>
-            <a className="btn btn-fill mr-auto mt-5" href='#contact'>CONTACT US</a>
+            <a className="btn btn-fill max-md:ml-auto mr-auto mt-5" href='#contact'>CONTACT US</a>
           </ScrollAnimation>
           <ScrollAnimation animateOnce animateIn="animate__slideInRight">
             <Form submit='JOIN US' api='signup' schema={signup}>
