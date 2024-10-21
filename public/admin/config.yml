@@ -107,3 +107,10 @@ collections:
       - { label: 'Facebook', name: 'fb', widget: 'string'}
       - { label: 'YouTube', name: 'yt', widget: 'string'}
       - { label: 'Instagram', name: 'insta', widget: 'string'}
+    - label: 'Contact Details'
+      name: contact
+      file: content/contact.md
+      fields:
+      - {label: 'E-mail', name: email, widget: string}
+      - {label: 'Student Coordinator Phone No', name: phone, widget: string}
+      - {label: 'Meetings', name: meetings, widget: string}

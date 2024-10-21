@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from 'next/link';
 import { Sora } from 'next/font/google';
 
+import ScrollAnimation from "react-animate-on-scroll";
+
 import excerpts from 'excerpts';
 
 import {
@@ -9,6 +11,8 @@ import {
   TiSocialInstagramCircular,
   TiSocialYoutubeCircular,
 } from 'react-icons/ti';
+
+import { TbMail, TbMapPin, TbPhone } from "react-icons/tb";
 
 import landing_bg from '../images/landing-bg.jpg';
 
@@ -23,11 +27,11 @@ import { signup, contact } from "../util/schemas";
 import { attributes as _about, react as AboutBlock } from '../content/about.md';
 import { attributes as _social } from '../content/social.md';
 import { attributes as _gallery } from '../content/gallery.md';
-import ScrollAnimation from "react-animate-on-scroll";
+import { attributes as _contact } from '../content/contact.md';
 
 const sora = Sora({ subsets: ['latin'], weight: '700' });
 
-export default function Index({ about, social, gallery, projects }) {
+export default function Index({ about, social, gallery, contact_info, projects }) {
   const { vision, mission, tic, board } = about;
 
   return (
@@ -105,7 +109,7 @@ export default function Index({ about, social, gallery, projects }) {
 
       <OverlayCover bg="bg-[#1d1d1d] !bg-opacity-70">
         <div className="prose-p:!mt-1 cols-2">
-          <ScrollAnimation animateOnce animateIn="animate__slideInLeft">
+          <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="max-md:mb-2">
             <h1>Join RCRC Now!</h1>
             <p className="text-xl">Fill the following form to join The Radio Club of Royal College</p>
             <p>We welcome all Royalists from grade 6 and above. Join RCRC to gain vital experience and skills on Event Management, Audio Engineering and Compering!</p>
@@ -137,18 +141,36 @@ export default function Index({ about, social, gallery, projects }) {
 
       <OverlayCover bg='bg-gray-950'>
         <div className="cols-2 prose-h4:!mb-1 prose-h4:!text-gray-300/80" id="contact">
-          <ScrollAnimation animateOnce animateIn="animate__slideInLeft" className="text-left">
+          <ScrollAnimation animateOnce animateIn='animate__slideInLeft' className="gap-y-4 max-md:text-center max-md:mb-2">
+            <h1>Contact Us</h1>
+
+            <div className="flex flex-col prose-a:max-md:mx-auto gap-y-2 prose-a:!text-white prose-a:!font-medium prose-a:text-lg prose-a:!mt-0 hover:prose-a:!underline prose-a:!no-underline">
+              <a className="flex gap-x-2 hover:underline" target="_blank" href={`mailto:${contact_info.email}`}>
+                <TbMail className="my-auto text-xl" /> {contact_info.email}
+              </a>
+              <a className="flex gap-x-2 hover:underline" href="https://royalcollege.lk" target="_blank">
+                <TbMapPin className="my-auto text-xl" /> Royal College, Colombo 07
+              </a>
+
+              <div className="flex flex-col mt-2">
+                <h4>STUDENT COORDINATOR</h4>
+                Kushmika Mathew - {contact_info.phone.replace(/\s/, '').replace(/(\d{3})(\d{3})(\d{4})/gm, '$1 $2 $3')}
+              </div>
+              <div className="flex flex-col">
+                <h4>MEETINGS</h4>
+                {contact_info.meetings.trim()}
+              </div>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateOnce animateIn="animate__slideInRight">
             <Form submit='SEND MESSAGE' api='contact' schema={contact}>
               <Field name='name' type="text">Your Name</Field>
               <Field name='email' type="email" >Your E-mail</Field>
               <Field name='message' as="textarea" type='text' className='mb-8'>Message</Field>
             </Form>
           </ScrollAnimation>
-          <div>
-            <h1></h1>
-          </div>
         </div>
-      </OverlayCover >
+      </OverlayCover>
     </>
   );
 }
@@ -159,6 +181,8 @@ export function getStaticProps() {
       gallery: _gallery.piclist.filter(function (pic) { return pic.featured; }),
       about: _about,
       social: _social,
+      contact_info: _contact,
+
       projects: getProjects().map(function (name) {
         const { gallery, html, ...project } = getProjectProps(name);
         return { text: excerpts(html, { words: 150 }), ...project };

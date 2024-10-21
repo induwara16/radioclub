@@ -57,7 +57,7 @@ export default function Form({ schema, api, children, submit }) {
           <_Form>
             {children}
 
-            <div className='flex flex-row gap-x-6'>
+            <div className='flex flex-row gap-x-6 !mb-0'>
               <button type="submit" className="btn btn-fill" disabled={isSubmitting}>{submit}</button>
               {isSubmitting &&
                 <div className='size-6 my-auto rounded-full bg-gray-500 animate-spin bg-opacity-70'>
