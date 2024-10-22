@@ -154,7 +154,7 @@ export default function Index({ about, social, gallery, contact_info, projects }
 
               <div className="flex flex-col mt-2">
                 <h4>STUDENT COORDINATOR</h4>
-                Kushmika Mathew - {contact_info.phone.replace(/\s/, '').replace(/(\d{3})(\d{3})(\d{4})/gm, '$1 $2 $3')}
+                {contact_info.name} - {contact_info.phone.replace(/\s/, '').replace(/(\d{3})(\d{3})(\d{4})/gm, '$1 $2 $3')}
               </div>
               <div className="flex flex-col">
                 <h4>MEETINGS</h4>

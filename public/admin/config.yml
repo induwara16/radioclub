@@ -113,4 +113,12 @@ collections:
       fields:
       - {label: 'E-mail', name: email, widget: string}
       - {label: 'Student Coordinator Phone No', name: phone, widget: string}
+      - label: Student Coordinator
+        name: name
+        widget: relation
+        collection: home
+        file: about
+        display_fields: ['board.*.name']
+        search_fields: ['board.*.name', 'board.*.position']
+        value_field: 'board.*.name'
       - {label: 'Meetings', name: meetings, widget: string}
